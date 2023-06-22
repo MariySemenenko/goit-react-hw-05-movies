@@ -21,8 +21,7 @@ const Movies = () => {
     }
     setSearchParams({query:name})
   };
-const newQuery = searchParams.get('query')
-console.log(newQuery)
+
 
 
   return (
@@ -38,9 +37,9 @@ console.log(newQuery)
 
         <button disabled={!name} type='submit'>Search</button>
       </form>
-      {/* {isLoading && <Loader />}
+      {isLoading && <Loader />}
       {error && <p>Ups</p>}
-      {movies.length > 0 && <MoviesList movies={movies} />} */}
+      {movies.length > 0 && <MoviesList movies={movies} />}
     </>
   );
 };
