@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { getMoviesByQuery } from "serviceApp/serviceApp";
-//import { useParams } from "react-router-dom"; ??
+
 
 
 export const useMoviesByQuery = (query) => {
@@ -12,8 +12,8 @@ export const useMoviesByQuery = (query) => {
         setIsLoading(true);
         const moviesQuery = async () => {
             try {
-                const byQuery = await getMoviesByQuery(query);
-                setMovies(byQuery);
+                const data = await getMoviesByQuery(query);
+                setMovies(data);
                
             } catch (error) {
                 setError(error.message);
@@ -23,7 +23,7 @@ export const useMoviesByQuery = (query) => {
         };
         moviesQuery();
     }, [query]);
-    console.log(movies)
+   
     return { movies, error, isLoading };
     
 };

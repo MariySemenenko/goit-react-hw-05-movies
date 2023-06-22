@@ -24,6 +24,7 @@ export const getMoviesByQuery = async query => {
 };
 
 export const getMovieDetails = async movieId => {
+  // console.log(movieId)
   try {
     const { data } = await axios.get(
       `movie/${movieId}?api_key=${API_KEY}&language=en-US&external_source=imdb_id`
