@@ -1,10 +1,10 @@
-// місце де розташування <Outlet> - буде рендетися розмітка компонентів сторінок
+//  Header
 
 
 import { Loader } from "components/Loader/Loader";
 import { Suspense } from "react";
 import { Outlet } from "react-router-dom";
-import {  NavLink } from "react-router-dom";//якщо URL збігається зі пропcа to, елементу додається клас active
+import {  NavLink } from "react-router-dom";
 
 export const SharedLayout = () => {
 
