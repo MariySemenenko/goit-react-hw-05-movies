@@ -8,14 +8,14 @@ import { useSearchParams } from 'react-router-dom';
 const Movies = () => {
   const [name, setName] = useState('');
   const [ searchParams, setSearchParams] = useSearchParams()
-  //const { movies, error, isLoading } = useMoviesByQuery('time');
+  const { movies, error, isLoading } = useMoviesByQuery('time');
   
 
   const handleChange = e => {
     setName(e.currentTarget.value.toLowerCase().trim());
   };
   const handleSubmit = e => {
-    e.preventDafault();
+    e.preventDefault();
     if (!name) {
       return alert('Please enter query');
     }
@@ -24,7 +24,7 @@ const Movies = () => {
 const newQuery = searchParams.get('query')
 console.log(newQuery)
 
-console.log(name)
+
   return (
     <>
       <form onSubmit={handleSubmit}>
