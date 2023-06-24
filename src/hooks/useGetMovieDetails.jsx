@@ -1,11 +1,8 @@
-//отримую деталі фільму по Id
+//отримую деталі одного фільму для сторінки pages/MovieDetails
 
 import { useEffect, useState } from "react";
 import { getMovieDetails } from "serviceApp/serviceApp";
 import { useParams } from "react-router-dom"; 
-//використовую для from і повернення назад
-// import { useLocation } from "react-router-dom";
-// import { useRef } from 'react';
 
 export const useGetMovieDetails = () => {
 
@@ -13,9 +10,7 @@ export const useGetMovieDetails = () => {
     const [error, setError] = useState(null);
     const [isLoading, setIsLoading] = useState(null);
     const { movieId } = useParams();
-// console.log(movieId)
-    // const location = useLocation();
-    // const backLinkHref = useRef(location.state?.from ?? '/movies');
+
 
     useEffect(() => { 
         movieDetails(movieId);
@@ -38,4 +33,4 @@ export const useGetMovieDetails = () => {
     return { movie, error, isLoading };
     
 };
-//const backLinkHref = location.state?.from ?? "/products";
+

@@ -1,12 +1,13 @@
 import { Loader } from 'components/Loader/Loader';
 import { useGetMovieDetails } from 'hooks/useGetMovieDetails';
-import { Suspense, useRef } from 'react';
+import { Suspense, useRef } from 'react';//useRef повернення до Home
 import { Link, Outlet, useLocation } from 'react-router-dom';
 
 export const MovieDetails = () => {
   const { movie, error, isLoading } = useGetMovieDetails();
+
   const location = useLocation();
-  const backLinkHref = useRef(location?.state?.from ?? '/');
+  const backLinkHref = useRef(location?.state?.from ?? '/');//Go back повернення до Home to={backLinkHref.current}
 //   console.log(movie);
   return (
     <>
@@ -36,6 +37,7 @@ export const MovieDetails = () => {
           </div>
           <ul>
             <li>
+              
               <Link to="cast">Cast</Link>
             </li>
             <li>

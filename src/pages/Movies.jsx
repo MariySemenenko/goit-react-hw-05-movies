@@ -1,8 +1,10 @@
+//список фільмів на цій сторінці рендериться на сторінці MoviesList
 import { Loader } from 'components/Loader/Loader';
 import { MoviesList } from 'components/MoviesList/MoviesList';
 import { useMoviesByQuery } from 'hooks/useMoviesByQuery';
 import { useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
+//import PropTypes from 'prop-types';??
 
 
 const Movies = () => {
@@ -19,7 +21,7 @@ const Movies = () => {
     if (!name) {
       return alert('Please enter query');
     }
-    setSearchParams({query:name})
+    setSearchParams({query:name})//зчитую query з хука useMoviesByQuery 
   };
 
 
@@ -44,3 +46,4 @@ const Movies = () => {
   );
 };
 export default Movies;
+

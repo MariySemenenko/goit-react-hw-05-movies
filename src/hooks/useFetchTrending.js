@@ -1,5 +1,4 @@
-//Тут ми отримуємо популярні фільми за допомогою getTrendingMovies()
-//та обробляємо стан помилок
+//цей хук для сторінки Home
 
 import { useEffect, useState } from "react";
 import { getTrendingMovies } from "serviceApp/serviceApp";
