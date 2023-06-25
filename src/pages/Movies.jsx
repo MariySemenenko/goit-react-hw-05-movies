@@ -10,7 +10,7 @@ import { useSearchParams } from 'react-router-dom';
 const Movies = () => {
   const [name, setName] = useState('');
   const [ searchParams, setSearchParams] = useSearchParams()
-  const { movies, error, isLoading } = useMoviesByQuery('time');
+  const { movies, error, isLoading } = useMoviesByQuery();
   
 
   const handleChange = e => {

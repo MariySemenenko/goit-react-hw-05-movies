@@ -14,7 +14,7 @@ return (
     {movies.map(({id, title, original_title, name}) =>  //дістаю значення з фільмів {id, title, original_title, name}
     <li key = {id}>
         <Link to={`/movies/${id}`} state={{from: location}} >   
-        {title || name || original_title }
+       <h2>{title || name || original_title }</h2>
         </Link>
     </li>
     )}
@@ -31,6 +31,8 @@ MoviesList.propTypes = {
       PropTypes.shape({
         id: PropTypes.number.isRequired,
         original_title: PropTypes.string,
+        title: PropTypes.string,
+        name: PropTypes.string,
       })
     ).isRequired,
   };

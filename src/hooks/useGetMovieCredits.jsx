@@ -10,20 +10,22 @@ export const useGetMovieCredits = () => {
     const { movieId } = useParams();
 
     useEffect(() => {
-        setIsLoading(true);
-        const moviesCredit = async (movieId) => {
-            try {
-                const byCredit = await getMovieCredits(movieId);
-                setCredit(byCredit);
-               
-            } catch (error) {
-                setError(error.message);
-            } finally {
-                setIsLoading(false);
-            }
-        };
-        moviesCredit();
+        moviesCredit(movieId)
+        
     }, [movieId]);
+
+    const moviesCredit = async (movieId) => {
+        setIsLoading(true);
+        try {
+            const byCredit = await getMovieCredits(movieId);
+            setCredit(byCredit);
+            // console.log(byCredit)
+        } catch (error) {
+            setError(error.message);
+        } finally {
+            setIsLoading(false);
+        }
+    };
    
     return { credit, error, isLoading, };
 

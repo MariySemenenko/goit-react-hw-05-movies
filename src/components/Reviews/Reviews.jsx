@@ -3,14 +3,15 @@ import { useGetMovieReviews } from 'hooks/useGetMovieReviews';
 
 export const Reviews = () => {
   const { reviews, error, isLoading } = useGetMovieReviews();
+  // console.log(reviews)
   return (
     <>
       <ul>
         {reviews.length > 0 ? (
-          reviews.map(() => (
-            <li>
-              <p></p>
-              <p></p>
+          reviews.map(({ author, content, id}) => (
+            <li key={id}>
+              <p>Author: {author}</p>
+              <p>Content: {content}</p>
             </li>
           ))
         ) : (
