@@ -40,8 +40,8 @@ const Movies = () => {
         <button disabled={!name} type='submit'>Search</button>
       </form>
       {isLoading && <Loader />}
-{error && <p>Something went wrong</p>}
-{movies.length > 0 && <MoviesList movies={movies} />}
+      {error && <p>Something went wrong</p>}
+      {movies.length > 0 && <MoviesList movies={movies} />}
     </>
   );
 };
