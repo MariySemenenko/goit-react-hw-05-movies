@@ -1,8 +1,9 @@
 
 //тут рендериться один список фільмів для двох сторінок Home та Movies
 
-import { Link, useLocation } from "react-router-dom"
+import { useLocation } from "react-router-dom"
 import PropTypes from 'prop-types';
+import { Links, Li } from './MoviesList.styled'
 
 //створюю посилання на фільми
 export const MoviesList = ({movies}) => {
@@ -12,19 +13,17 @@ return (
     <div>
 <ul>
     {movies.map(({id, title, original_title, name}) =>  //дістаю значення з фільмів {id, title, original_title, name}
-    <li key = {id}>
-        <Link to={`/movies/${id}`} state={{from: location}} >   
-       <h2>{title || name || original_title }</h2>
-        </Link>
-    </li>
+    <Li key = {id}>
+        <Links to={`/movies/${id}`} state={{from: location}} >   
+       {title || name || original_title }
+        </Links>
+    </Li>
     )}
-
-  
 </ul>
     </div>
 )
 }
-//при нажиманні на один фільм нас виводить на сторінку MovieDetails та виводиться інфо про конкретний фільм
+//при нажиманні на один фільм нас виводить на сторінку MovieDetails та виводиться інфо про даний фільм
 //<Link to={`/movies/${id}`} state={{from: location}} >  
 MoviesList.propTypes = {
     movies: PropTypes.arrayOf(

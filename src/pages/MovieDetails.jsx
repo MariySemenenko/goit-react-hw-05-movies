@@ -1,7 +1,11 @@
+//переходю сюди з MoviesList та рендеримо один фільм
+//з цієї сторінки переходю на cast and reviews
+
 import { Loader } from 'components/Loader/Loader';
 import { useGetMovieDetails } from 'hooks/useGetMovieDetails';
 import { Suspense, useRef } from 'react';//useRef повернення до Home
-import { Link, Outlet, useLocation } from 'react-router-dom';
+import { Outlet, useLocation, Link } from 'react-router-dom';
+import { Button, Img, P, Ul, Li, Links, None } from './MovieDetails.styled';
 
 export const MovieDetails = () => {
   const { movie, error, isLoading } = useGetMovieDetails();
@@ -12,12 +16,13 @@ export const MovieDetails = () => {
   return (
     <>
       <Link to={backLinkHref.current}>
-        <button>Go back</button>
+        <Button>Go back</Button>
       </Link>
+      
       {movie && (
         <div>
           <div>
-            <img
+            <Img
               src={
                 movie.poster_path
                   ? `https://image.tmdb.org/t/p/w300${movie.poster_path}`
@@ -27,25 +32,26 @@ export const MovieDetails = () => {
             />
           </div>
           <div>
-            <p>{movie.title || movie.original_title}</p>
-            <p>Rating:{movie.vote_average}</p>
-            <p>{movie.overview}</p>
-            <ul>
+            <P>{movie.title || movie.original_title}</P>
+            <P>Rating: {movie.vote_average}</P>
+            <P>{movie.overview}</P>
+            </div>
+            <Ul>
               {movie.genres &&
-                movie.genres.map(({ id, name }) => <li key={id}>{name}</li>)}
-            </ul>
-          </div>
-          <ul>
+                movie.genres.map(({ id, name }) => <Li key={id}>{name}</Li>)}
+            </Ul>
+          
+          <None>
             <li>
               
-              <Link to="cast">Cast</Link>
+              <Links to="cast">Cast</Links>
             </li>
             <li>
-              <Link to="reviews">Reviews</Link>
+              <Links to="reviews">Reviews</Links>
             </li>
-          </ul>
+          </None>
           {isLoading && <Loader />}
-          {error && <p>Ups</p>}
+          {error && <p>Something went wrong</p>}
           <Suspense fallback={<Loader/>}>
             <Outlet />
           </Suspense>

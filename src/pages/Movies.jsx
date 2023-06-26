@@ -3,15 +3,14 @@ import { Loader } from 'components/Loader/Loader';
 import { MoviesList } from 'components/MoviesList/MoviesList';
 import { useMoviesByQuery } from 'hooks/useMoviesByQuery';
 import { useState } from 'react';
-import { useSearchParams } from 'react-router-dom';
-//import PropTypes from 'prop-types';??
+import { Form, Input, Button } from './Movies.styled';
 
+//import PropTypes from 'prop-types';??
 
 const Movies = () => {
   const [name, setName] = useState('');
-  const [ searchParams, setSearchParams] = useSearchParams()
-  const { movies, error, isLoading } = useMoviesByQuery();
-  
+
+  const { movies, error, isLoading, setSearchParams } = useMoviesByQuery();
 
   const handleChange = e => {
     setName(e.currentTarget.value.toLowerCase().trim());
@@ -21,15 +20,12 @@ const Movies = () => {
     if (!name) {
       return alert('Please enter query');
     }
-    setSearchParams({query:name})//зчитую query з хука useMoviesByQuery 
+    setSearchParams(name !== '' ? { query: name } : {}); //зчитую query з хука useMoviesByQuery
   };
-
-
-
   return (
     <>
-      <form onSubmit={handleSubmit}>
-        <input
+      <Form onSubmit={handleSubmit}>
+        <Input
           type="text"
           value={name}
           placeholder="movie name"
@@ -37,8 +33,10 @@ const Movies = () => {
           autoFocus
         />
 
-        <button disabled={!name} type='submit'>Search</button>
-      </form>
+        <Button disabled={!name} type="submit">
+          Search
+        </Button>
+      </Form>
       {isLoading && <Loader />}
       {error && <p>Something went wrong</p>}
       {movies.length > 0 && <MoviesList movies={movies} />}
@@ -46,4 +44,3 @@ const Movies = () => {
   );
 };
 export default Movies;
-
