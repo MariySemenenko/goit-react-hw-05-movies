@@ -5,7 +5,7 @@ import { Loader } from 'components/Loader/Loader';
 import { useGetMovieDetails } from 'hooks/useGetMovieDetails';
 import { Suspense, useRef } from 'react';//useRef повернення до Home
 import { Outlet, useLocation, Link } from 'react-router-dom';
-import { Button, Img, P, Ul, Li, Links, None } from './MovieDetails.styled';
+import { Button, Img, P, Ul, Li, Links, None, Div, Title } from './MovieDetails.styled';
 
 export const MovieDetails = () => {
   const { movie, error, isLoading } = useGetMovieDetails();
@@ -21,7 +21,8 @@ export const MovieDetails = () => {
       
       {movie && (
         <div>
-          <div>
+          <Div>
+            <div>
             <Img
               src={
                 movie.poster_path
@@ -32,15 +33,16 @@ export const MovieDetails = () => {
             />
           </div>
           <div>
-            <P>{movie.title || movie.original_title}</P>
+            <Title>{movie.title || movie.original_title}</Title>
             <P>Rating: {movie.vote_average}</P>
             <P>{movie.overview}</P>
-            </div>
+           
             <Ul>
               {movie.genres &&
                 movie.genres.map(({ id, name }) => <Li key={id}>{name}</Li>)}
             </Ul>
-          
+            </div>
+            </Div>
           <None>
             <li>
               

@@ -1,5 +1,12 @@
-import styled from '@emotion/styled'
+import styled from '@emotion/styled';
 
 export const Ul = styled.ul`
-    list-style: none;
-`
+  list-style: none;
+  display: flex;
+  text-decoration: none;
+  flex-wrap: wrap;
+  gap: 15px;
+`;
+export const P = styled.p`
+  color: cornflowerblue;
+`;

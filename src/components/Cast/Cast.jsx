@@ -1,6 +1,6 @@
 import { useGetMovieCredits } from 'hooks/useGetMovieCredits';
 import { Loader } from 'components/Loader/Loader';
-import { Ul } from './Cast.styled'
+import { Ul, P } from './Cast.styled'
 
 //запит інформації про акторський склад для сторінки кінофільму
 export const Cast = () => {
@@ -19,8 +19,8 @@ export const Cast = () => {
               }
               alt={original_name}
             />
-            <p>Actor: {original_name}</p>
-            <p>Character: {character}</p>
+            <P>Actor: {original_name}</P>
+            <P>Character: {character}</P>
           </li>
         ))}
       </Ul>

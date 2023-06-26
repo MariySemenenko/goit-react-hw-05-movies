@@ -26,7 +26,12 @@ export const Img = styled.img`
 `;
 
 export const P = styled.p`
-  margin-top: 10px;
+  width: 500px;
+  color: cornflowerblue;
+  padding-left: 50px;
+`;
+export const Title = styled.p`
+  font-size: 30px;
   color: cornflowerblue;
   padding-left: 50px;
 `;
@@ -53,4 +58,8 @@ export const Links = styled(NavLink)`
 `;
 export const None = styled.ul`
   list-style: none;
+`;
+
+export const Div = styled.div`
+  display: flex;
 `;
