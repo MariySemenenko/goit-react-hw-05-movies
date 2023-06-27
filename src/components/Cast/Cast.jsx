@@ -1,11 +1,11 @@
 import { useGetMovieCredits } from 'hooks/useGetMovieCredits';
 import { Loader } from 'components/Loader/Loader';
-import { Ul, P } from './Cast.styled'
+import { Ul, P } from './Cast.styled';
 
 //запит інформації про акторський склад для сторінки кінофільму
-export const Cast = () => {
+const Cast = () => {
   const { credit, error, isLoading } = useGetMovieCredits();
-// console.log(credit)
+  // console.log(credit)
   return (
     <>
       <Ul>
@@ -29,3 +29,4 @@ export const Cast = () => {
     </>
   );
 };
+export default Cast;

@@ -17,7 +17,6 @@ export const useGetMovieReviews = () => {
     try {
       const byMoviesReviews = await getMovieReviews(movieId);
       setReviews(byMoviesReviews);
-      console.log(byMoviesReviews);
     } catch (error) {
       setError(error.message);
     } finally {

@@ -20,6 +20,7 @@ export const NavLinkk = styled(NavLink)`
   padding-right: 10px;
   font-size: 20px;
   color: black;
+  text-decoration: none;
 
   &.active {
     color: cornflowerblue;
