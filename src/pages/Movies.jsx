@@ -4,6 +4,7 @@ import { MoviesList } from 'components/MoviesList/MoviesList';
 import { useMoviesByQuery } from 'hooks/useMoviesByQuery';
 import { useState } from 'react';
 import { Form, Input, Button } from './Movies.styled';
+import PropTypes from 'prop-types';
 
 //import PropTypes from 'prop-types';??
 
@@ -44,3 +45,8 @@ const Movies = () => {
   );
 };
 export default Movies;
+
+Movies.propTypes = {
+  setSearchParams:PropTypes.func.isRequired
+
+}
