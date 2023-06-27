@@ -2,11 +2,10 @@
 
 import { Routes, Route } from 'react-router-dom';
 import { SharedLayout } from './SharedLayout/SharedLayout';
-
 import NotFound from 'pages/NotFound';
-
 import { lazy } from 'react';
 
+//асинхронне завантаження JS-коду
 const Home = lazy(() => import('../pages/Home'));
 const Movies = lazy(() => import('../pages/Movies'));
 const MovieDetails = lazy(() => import('../pages/MovieDetails'));
