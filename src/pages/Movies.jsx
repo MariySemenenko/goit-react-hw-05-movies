@@ -1,3 +1,4 @@
+//виконую пошук фільмів далі
 //список фільмів на цій сторінці рендериться на сторінці MoviesList
 import { Loader } from 'components/Loader/Loader';
 import { MoviesList } from 'components/MoviesList/MoviesList';
@@ -42,3 +43,4 @@ const Movies = () => {
   );
 };
 export default Movies;
+ 

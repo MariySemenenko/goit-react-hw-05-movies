@@ -48,7 +48,7 @@ export const Li = styled.li`
 
 export const Links = styled(NavLink)`
   padding-right: 10px;
-
+text-decoration: none;
   font-size: 20px;
   color: black;
 

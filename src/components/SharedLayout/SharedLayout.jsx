@@ -21,4 +21,4 @@ export const SharedLayout = () => {
   );
 };
 
-//під шедером розташована page Home та page Movies
+//під xедером розташована page Home та page Movies
