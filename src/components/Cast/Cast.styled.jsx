@@ -10,3 +10,8 @@ export const Ul = styled.ul`
 export const P = styled.p`
   color: cornflowerblue;
 `;
+
+export const Img = styled.img`
+  width: 300px;
+  height: 450px;
+`;

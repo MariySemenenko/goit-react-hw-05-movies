@@ -1,6 +1,6 @@
 import { useGetMovieCredits } from 'hooks/useGetMovieCredits';
 import { Loader } from 'components/Loader/Loader';
-import { Ul, P } from './Cast.styled';
+import { Ul, P, Img } from './Cast.styled';
 
 //запит інформації про акторський склад для сторінки кінофільму
 const Cast = () => {
@@ -11,7 +11,7 @@ const Cast = () => {
       <Ul>
         {credit.map(({ id, profile_path, original_name, character }) => (
           <li key={id}>
-            <img
+            <Img
               src={
                 profile_path
                   ? `https://image.tmdb.org/t/p/w300${profile_path}`
