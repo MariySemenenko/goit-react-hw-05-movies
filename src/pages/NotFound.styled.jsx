@@ -20,4 +20,13 @@ export const Button = styled.button`
   &:active {
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1), 0 0 4px cornflowerblue;
   }
+
 `
+
+export const P = styled.p`
+   color: cornflowerblue;
+`;
+
+export const H1 = styled.h1`
+    color: cornflowerblue;
+`;
