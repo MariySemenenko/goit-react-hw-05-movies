@@ -43,7 +43,7 @@ return <>
 <Div>
       <H1>404 - Page Not Found</H1>
       <P>The page you are looking for does not exist</P>
-      
+      <P>You will be redirected to the home page</P>
     </Div>
     </>
 }
