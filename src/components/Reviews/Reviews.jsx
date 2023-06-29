@@ -1,6 +1,6 @@
 import { Loader } from 'components/Loader/Loader';
 import { useGetMovieReviews } from 'hooks/useGetMovieReviews';
-import { Ul, Author, P } from './Reviews.styled';
+import { Ul, Author, P, Color } from './Reviews.styled';
 
 const Reviews = () => {
   const { reviews, error, isLoading } = useGetMovieReviews();
@@ -16,7 +16,7 @@ const Reviews = () => {
             </li>
           ))
         ) : (
-          <p>There are no reviews yet</p>
+          <Color>There are no reviews yet</Color>
         )}
       </Ul>
       {isLoading && <Loader />}

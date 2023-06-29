@@ -13,3 +13,6 @@ export const P = styled.p`
     color: cornflowerblue;
     width: 800px;
 `
+export const Color = styled.p`
+  color: cornflowerblue;  
+`
